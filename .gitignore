@@ -6,3 +6,7 @@ lcov.info
 .env
 broadcast/
 .DS_Store
+ui/.env.local
+ui/node_modules/
+ui/.next
+ui/.npmrc

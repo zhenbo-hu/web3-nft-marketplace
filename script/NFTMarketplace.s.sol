@@ -7,20 +7,10 @@ import {NFTMarketplace} from "../src/NFTMarketplace.sol";
 
 contract NFTMarketplaceScript is Script {
     function run() external {
-        uint256 deployerPrivateKey = vm.envUint(
-            "PRIVATE_KEY" // only for local deploy
-        );
+        uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployerPrivateKey);
 
-        SpongeBobToken spongeBobToken = new SpongeBobToken();
-        spongeBobToken.safeMint(
-            address(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266),
-            "0"
-        );
-        spongeBobToken.safeMint(
-            address(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266),
-            "1"
-        );
+        new SpongeBobToken();
 
         new NFTMarketplace();
 
